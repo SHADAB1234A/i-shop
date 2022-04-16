@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Fruits Wale</title>
+      <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+      <style>
+        label {
+          font-weight: bold;
+        }
+        .login {
+            box-shadow: 2px 2px 10px greenyellow;
+            padding: 20px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+            color:red;
+        }
+      </style>
+      <script>
+          var userDetails =  {
+            Email: 'mdshadabukdhi@gmail.com',
+            Mobile: '+917667364160',
+            Password: 'shad123@'
+          }
+          var flag = "";
+          function ContinueClick(){
+            var userid = document.getElementById("txtId").value;
+           
+            var passwordContainer = document.getElementById("passwordContainer");
+            var idContainer = document.getElementById("idContainer");
+
+            function Toggle(){
+              passwordContainer.style.display = "block";
+               idContainer.style.display = "none";
+            }
+
+            if(userid==userDetails.Email) {
+               flag = `Login Success with email : ${userid}`;
+               Toggle();
+            }
+            else if(userid==userDetails.Mobile) {
+              flag = `Login Success With Mobile : ${userid}`;
+              Toggle();
+            } else {
+              document.getElementById("userError").innerHTML = "Please enter valid email or mobile";
+            }
+          }
+          function LoginClick(){
+            var password = document.getElementById("txtPwd").value;
+            if(password==userDetails.Password) {
+               document.write(flag);
+            } else {
+               document.getElementById("passwordError").innerHTML = "Invalid Password";
+            }
+          }
+      </script>
+  </head>
+  <body class="container-fluid">
+      <div>
+          <h2 class="text-center mt-4" style="font-size:40px;">Fruits Wale</h2>
+      </div>
+    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+        <div class="login" style="width: 450px;">
+            <h3>Sign In</h3>
+            <div id="idContainer" class="mb-3">
+              <label class="form-label">Email or mobile phone number</label>
+              <div>
+                 <input class="form-control" type="text" id="txtId">
+                 <div class="text-danger" id="userError"></div>
+              </div>
+              <div class="mt-3">
+                 <button onclick="ContinueClick()" class="btn btn-warning w-100"> Continue </button>
+              </div>
+            </div>
+            <div id="passwordContainer" style="display: none;" class="mb-3">
+              <label class="form-label">Verify password</label>
+              <div>
+                 <input class="form-control" type="password" id="txtPwd">
+                 <div class="text-danger" id="passwordError"></div>
+              </div>
+              <div class="mt-3">
+                 <button onclick="LoginClick()" class="btn btn-warning w-100"> Login </button>
+              </div>
+            </div>
+            <a href="#">
+                <p>Need Help<span class="bi bi-caret-right-fill"></span></p>
+            </a>
+        </div>
+    </div>
+    <a href="signin.html">
+        <h5 class="text-center mb-4">Create New Account</h5>
+    </a>
+  </body>
+</html>

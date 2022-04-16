@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fruits Wale</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+       label {
+          font-weight: bold;
+        }
+        .login {
+          border:1px solid gray;
+          padding: 20px;
+        }
+      .nav-link:hover{
+        color: red;
+        text-transform: uppercase;
+      }
+      .navbar-nav{
+        font-size: 20px;
+      }
+      .navbar-brand{
+        font-size: 30px;
+      }
+      .navbar-brand:hover{
+        color: red;
+        text-transform: uppercase;
+      }
+      .box{
+        margin-bottom: 50px;
+        margin-left: 100px;
+        box-shadow: 1px 2px 5px 2px gray;
+        width: 250px;
+        cursor: pointer;
+      }
+      a:hover{
+        opacity: 0.8;
+        color:red;
+      }
+      .content{
+        margin-left: 60px;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      .footer{
+        height: 350px;
+        background-color:steelblue;
+      }
+      #facebook{
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 20px;
+        background-color: black;
+        color: white;
+      }
+      #whatsapp{
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 20px;
+        background-color: black;
+        color: white;
+      }
+      #twitter{
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 20px;
+        background-color: black;
+        color: white;
+      }
+      #instagram{
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 20px;
+        background-color: black;
+        color: white;
+      }
+      #btn{
+        margin-left: 700px;
+      }
+      #icon{
+        font-size: 20px;
+      }
+      li{
+        color: white;
+        list-style: none;
+      }
+      li:hover{
+        padding-left: 10px;
+      }
+      #person:hover{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+  <header style="box-shadow:2px 3px 5px gray" class="fixed-top bg-light">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand">Fruits Wale</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Fruits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vegitables</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search products" id="productitem">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+        <a href="Login.html">
+          <div style="margin-left:20px;">
+            <button id="person" class="btn btn-info"><span class="bi bi-person-fill"></span></button>
+          </div>
+        </a>
+        <div style="margin-left:20px;">
+          <button onclick="LoadCartItems()" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cart">
+              [<span id="count"></span>]
+              <span class="bi bi-cart4"></span>
+          </button>
+          <div class="modal fade" id="cart">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3>Your Cart Items</h3>
+                          <button data-bs-dismiss="modal" class="btn-close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <table class="table table-hover">
+                              <thead>
+                                  <tr>
+                                      <th>Title</th>
+                                      <th>Price</th>
+                                      <th>Preview</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+<!-----------Carousel Part-->
+    <div class="mt-5" id="home">
+      <div class="carousel slide carousel-dark" data-bs-ride="carousel" id="banner">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="../public/images/fruit2.png" height="300" class="w-100 d-block">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="../public/images/grapes.png" height="300" class="w-100 d-block">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="../public/images/fruit3.png" height="300" class="w-100 d-block">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="../public/images/vegitable2.png" height="300" class="w-100 d-block">
+          </div>
+          <div class="carousel-item" data-bs-interval="4000">
+            <img src="../public/images/mix.png" height="300" class="w-100 d-block">
+        </div>
+        </div>
+        <button data-bs-target="#banner" data-bs-slide="prev" class="carousel-control-prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button data-bs-target="#banner" data-bs-slide="next" class="carousel-control-next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+            <button data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
+            <button  data-bs-target="#banner" data-bs-slide-to="1"></button>
+            <button  data-bs-target="#banner" data-bs-slide-to="2"></button>
+            <button  data-bs-target="#banner" data-bs-slide-to="3"></button>
+            <button  data-bs-target="#banner" data-bs-slide-to="4"></button>
+        </div>
+      </div>
+    </div>
+<!---Image 1--->
+    <div class="text-center mt-3 bg-primary text-white p-2">
+      <h3>Explore Fruits</h3>
+    </div>
+    <div class="d-flex flex-wrap mt-4" id="productList">
+      <div class="box" id="products">
+        <a href="Apple.html">
+          <img src="../public/images/apple.jpg" width="250" alt="Apple Image">
+          <div class="content">
+            <h3>Apple</h3>
+            <h5>&#8377;200/kg.</h5>
+          </div>
+        </a>
+        <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+      </div> 
+<!----image 2-->
+      <div class="box" id="products">
+       <a href="pineapple.html">
+        <img src="../public/images/pineapple.jpg" width="190" alt="pineapple Image">
+        <div class="content">
+          <h3>PineApple</h3>
+          <h5>&#8377;60/Pcs.</h5>
+        </div>
+       </a>
+        <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+      </div> 
+<!---image 3---->
+      <div class="box" id="products">
+       <a href="grapes.html">
+        <img src="../public/images/grapes.png" width="250" height="230" alt="Grapes Image">
+        <div class="content">
+          <h3>Grapes</h3>
+          <h5>&#8377;100/kg.</h5>
+        </div>
+       </a>
+        <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+      </div> 
+<!---image 4--->
+      <div class="box mt-3" id="products">
+       <a href="orange.html">
+        <img src="../public/images/orange.jpg" width="250" height="230" alt="Oranges Image">
+        <div class="content">
+          <h3>Oranges</h3>
+          <h5>&#8377;150/kg.</h5>
+        </div>
+       </a>
+        <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+      </div> 
+<!---images 5--->
+      <div class="box mt-3" id="products">
+       <a href="pomigranate.html">
+        <img src="../public/images/pominagreate.jpeg" width="250" height="230" alt="Oranges Image">
+        <div class="content">
+          <h3>pominagreate</h3>
+          <h5>&#8377;180/kg.</h5>
+        </div>
+       </a>
+        <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+      </div>
+<!---image 6--->
+      <div class="box mt-3" id="products">
+        <a href="banana.html">
+         <img src="../public/images/banana.jpg" width="250" height="230" alt="Oranges Image">
+         <div class="content">
+           <h3>Banana</h3>
+           <h5>12pcs. in &#8377; 40</h5>
+         </div>
+        </a>
+         <button class="btn btn-danger mb-3 form-control" ><span class="bi bi-cart4"></span>Add to Cart</button>
+       </div>  
+      </div>
+    </div>
+    <div class="bg-dark p-2">
+      <a href="#home"><h5 class="text-center text-white">Back to Top</h5></a>
+    </div>
+    <div class="footer">
+      <div class="d-flex">
+        <ul class="mt-4" style="margin-left:30px;">
+          <h4 class="text-white">About</h4>
+          <a href="#"><li>Contact us</li></a>
+          <a href="#"><li>About us</li></a>
+          <a href="#"><li>Services</li></a>
+          <a href="#"><li>Privacy Policy</li></a>
+        </ul>
+        <ul class="mt-4" style="margin-left:40px;">
+          <h4 class="text-white">Get Help</h4>
+          <a href="#"><li>Payment Option</li></a>
+          <a href="#"><li>Shipping</li></a>
+          <a href="#"><li>Cancellation & Returns</li></a>
+          <a href="#"><li>FAQ</li></a>
+          <a href="#"><li>Order Status</li></a>
+        </ul>
+        <ul class="mt-4" style="margin-left:40px;">
+          <h4 class="text-white">Connect With us</h4>
+          <a href="#"><li>Facebook</li></a>
+          <a href="#"><li>Whatsapp</li></a>
+          <a href="#"><li>Twitter</li></a>
+          <a href="#"><li>Instagram</li></a>
+        </ul>
+        <div class="mt-4" style="margin-left:200px;" id="link">
+          <a href="#"><span class="bi bi-facebook"id="facebook"></span></a>
+          <a href="#"><span class="bi bi-whatsapp" id="whatsapp"></span></a>
+          <a href="#"><span class="bi bi-twitter" id="twitter"></span></a>
+         <a href="#"><span class="bi bi-instagram" id="instagram"></span></a>
+          <a href="#"><span class="bi bi-youtube" id="instagram"></span></a>
+        </div>
+      </div>
+      <div id="btn">
+        <button class="btn btn-dark text-white w-25" style="margin-bottom:30px;"><span class="bi bi-apple" id="icon"></span>App Store</button>
+        <button class="btn btn-dark text-white w-25" style="margin-bottom:30px;"><span class="bi bi-google" id="icon"></span>Play Store</button>
+      </div>
+      <hr>
+      <h6 class="text-center text-white">&copy; Copyright 2022</h6>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
